@@ -4,7 +4,6 @@ body {
 }
 
 h1 {
-  height: 100vh;
   display: flex;
   color: #fff;
   align-items: center;
@@ -12,4 +11,21 @@ h1 {
   font-size: 5em;
   font-family: sans-serif;
   text-shadow: 0 0 20px black;
+}
+
+.profile {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+img {
+  border-radius: 100%;
+  border: 5px;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 0 20px black;
 }

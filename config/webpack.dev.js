@@ -27,6 +27,45 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].html'
+            }
+          },
+          {
+            loader: 'extract-loader',
+          },
+          {
+            loader: 'html-loader',
+            options: {
+              attributes: {
+                list: [
+                  {
+                    tag: 'img',
+                    attribute: 'src',
+                    type: 'src',
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(jpg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]'
+            }
+          }
+        ]
+      }
     ],
   },
 };

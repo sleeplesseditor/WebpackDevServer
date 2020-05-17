@@ -1,1 +1,2 @@
-import './main.css';
+require('./main.css')
+require('./index.html')
