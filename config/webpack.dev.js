@@ -4,7 +4,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    main: ['./src/main.js']
+    main: ['./src/main.js'],
+    ts: ["./src/index.ts"]
   },
   mode: 'development',
   output: {
@@ -30,6 +31,14 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+        exclude: /node_modules/,
+        options: {
+          configFile: path.join(__dirname, "../tsconfig.json")
+        }
       },
       {
         test: /\.css$/,
