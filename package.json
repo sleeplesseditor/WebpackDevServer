@@ -12,6 +12,14 @@
   "author": "Josh Bryson",
   "license": "ISC",
   "dependencies": {
+    "@angular/common": "^9.1.9",
+    "@angular/compiler": "^9.1.9",
+    "@angular/core": "^9.1.9",
+    "@angular/forms": "^9.1.9",
+    "@angular/http": "^7.2.16",
+    "@angular/platform-browser": "^9.1.9",
+    "@angular/platform-browser-dynamic": "^9.1.9",
+    "@angular/router": "^9.1.9",
     "@babel/core": "^7.9.6",
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
@@ -23,6 +31,7 @@
     "babel-plugin-async-to-promises": "^1.0.5",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-polyfill": "^6.26.0",
+    "core-js": "^3.6.5",
     "css-loader": "^3.5.3",
     "express": "^4.17.1",
     "extract-loader": "^5.0.1",
@@ -30,6 +39,8 @@
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "nodemon": "^2.0.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5",
     "style-loader": "^1.2.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.3",
@@ -37,6 +48,11 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.11.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "zone.js": "^0.10.3"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.3",
+    "@types/node": "^14.0.6"
   }
 }

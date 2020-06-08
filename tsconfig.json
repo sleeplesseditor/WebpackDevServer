@@ -5,6 +5,9 @@
     "module": "es6",
     "target": "es5",
     "jsx": "react",
+    "experimentalDecorators": true,
+    "baseUrl": "src",
+    "moduleResolution": "node"
     // "allowJs": true
   },
   "compileOnSave": false
