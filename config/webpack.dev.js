@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const vueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: {
@@ -20,8 +21,22 @@ module.exports = {
       colors: true
     }
   },
+  devtool: 'source-map',
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js'
+    }
+  },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: 'vue-loader'
+          }
+        ]
+      },
       {
         test: /\.js$/,
         use: [
@@ -75,6 +90,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new vueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
       template: './src/index.html'
