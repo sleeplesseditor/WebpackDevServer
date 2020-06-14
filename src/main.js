@@ -1,4 +1,5 @@
 require('./main.css')
 require('./images/link.jpg')
 require('./index.html')
+require('./app')
 console.log(`Environment is ${process.env.NODE_ENV}`)
