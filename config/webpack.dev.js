@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: {
@@ -22,6 +24,18 @@ module.exports = {
     hot: true,
     stats: {
       colors: true
+    }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          chunks: 'initial',
+          minChunks: 2
+        }
+      }
     }
   },
   module: {
@@ -75,6 +89,14 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'markdown-with-front-matter-loader'
+          }
+        ]
       }
     ],
   },
@@ -82,6 +104,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
       template: './src/index.html'
+    }),
+    new BundleAnalyzerPlugin({
+      generateStatsFile: true
     })
   ]
 };

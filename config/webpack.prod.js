@@ -20,6 +20,18 @@ module.exports = env => {
       path: path.resolve(__dirname, '../dist'),
       publicPath: '/',
     },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            name: 'vendor',
+            chunks: 'initial',
+            minChunks: 2
+          }
+        }
+      }
+    },
     module: {
       rules: [
         {
@@ -69,6 +81,14 @@ module.exports = env => {
               options: {
                 name: 'images/[name].[ext]'
               }
+            }
+          ]
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'markdown-with-front-matter-loader'
             }
           ]
         }
