@@ -102,11 +102,11 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HTMLWebpackPlugin({
-      template: './src/index.html'
-    }),
-    new BundleAnalyzerPlugin({
-      generateStatsFile: true
-    })
+    // new HTMLWebpackPlugin({
+    //   template: './src/index.html'
+    // }),
+    // new BundleAnalyzerPlugin({
+    //   generateStatsFile: true
+    // })
   ]
 };
